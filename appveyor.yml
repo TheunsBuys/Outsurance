@@ -1,7 +1,6 @@
 version: 1.0.{build}
-nuget restore Assessment\Assessment.sln
 before_build:
-  - nuget restore
+  - nuget restore Assessment\Assessment.sln
 build:
   project: Assessment\Assessment.sln
   verbosity: minimal
