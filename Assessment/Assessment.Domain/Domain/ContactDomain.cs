@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +34,26 @@ namespace Assessment.Model.Domain
                         .OrderByDescending(x => x.count)
                         .ThenBy(x => x.name)
                         .Select(x => new KeyValuePair<int, string>(x.count, x.name));
+        }
+
+        public bool ExportToFile (IEnumerable<KeyValuePair<int, string>> sortedContacts, string filePath )
+        {
+            try
+            {
+                using (var sw = new StreamWriter(filePath, false))
+                {
+                    foreach (var contact in sortedContacts)
+                    {
+                        sw.WriteLine($"{contact.Key} {contact.Value}");
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            return false;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assessment.Model
 {
-    public interface IRepository<TEntity> : IEnumerable<TEntity>
+    public interface IRepository<TEntity> : IEnumerable<TEntity>, IDisposable
         where TEntity : class, IEntity
     {
         TEntity Get(int id);

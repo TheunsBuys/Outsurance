@@ -5,6 +5,7 @@ using Moq;
 using System.Collections.Generic;
 using System.Linq;
 using Assessment.Domain;
+using Assessment.DataLayer;
 
 namespace Assessment.Tests
 {
@@ -86,7 +87,7 @@ namespace Assessment.Tests
         public void TestSortByAddresses()
         {
             var domain = new AddressDomain();
-            var context = new Mock<AppDataContext>();
+            var context = new Mock<IAppDataContext>();
             context.SetupGet(x => x.Addresses)
                 .Returns(() =>
                 {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assessment.Model
 {
-    public interface IAppDataContext
+    public interface IAppDataContext : IDisposable
     {
         IRepository<Contact> Contacts { get; set; }
         IRepository<Address> Addresses { get; set; }

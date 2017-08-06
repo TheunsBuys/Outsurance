@@ -66,6 +66,10 @@
       <Project>{d7b5e3ab-35f1-452e-a229-976a303940f2}</Project>
       <Name>Assessment.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Assessment.DataLayer\Assessment.DataLayer.csproj">
+      <Project>{2c4968ca-6e41-4d55-94bd-886684ffda35}</Project>
+      <Name>Assessment.DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Assessment.Domain\Assessment.Domain.csproj">
       <Project>{dc8cf5fd-0cca-433a-af1e-fd5524e2f8b7}</Project>
       <Name>Assessment.Domain</Name>

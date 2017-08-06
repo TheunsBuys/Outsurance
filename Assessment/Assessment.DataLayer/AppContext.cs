@@ -23,5 +23,12 @@ namespace Assessment.DataLayer
 
         public virtual IRepository<Contact> Contacts { get; set; }
         public virtual IRepository<Address> Addresses { get; set; }
+
+        public void Dispose()
+        {
+            Contacts?.Dispose();
+            Addresses?.Dispose();
+            GC.SuppressFinalize(this);
+        }
     }
 }

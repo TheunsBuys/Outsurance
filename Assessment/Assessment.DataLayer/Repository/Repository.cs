@@ -51,5 +51,13 @@ namespace Assessment.DataLayer
         {
             return _collection.GetEnumerator();
         }
+
+        public void Dispose()
+        {
+            if (_collection?.Any() ?? false)
+            {
+                _collection.Clear();
+            }
+        }
     }
 }

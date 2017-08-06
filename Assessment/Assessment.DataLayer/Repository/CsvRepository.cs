@@ -40,6 +40,8 @@ namespace Assessment.DataLayer
             return entity != default(TEntity);
         }
 
+        
+
         public TEntity Get(int id)
         {
             return _collection.ElementAtOrDefault(id);
@@ -59,5 +61,14 @@ namespace Assessment.DataLayer
         {
             return _collection.GetEnumerator();
         }
+
+        public void Dispose()
+        {
+            if(_collection?.Any() ?? false )
+            {
+                _collection.Clear();
+            }
+        }
+
     }
 }
