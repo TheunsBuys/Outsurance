@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9BFC2D2D-A2A4-48C0-8319-C3BCF9929B27}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{FBA4B8F6-6408-496B-8075-0B1DB0AE8042}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Assessment.Model</RootNamespace>
-    <AssemblyName>Assessment.Model</AssemblyName>
+    <RootNamespace>Assessment.Console</RootNamespace>
+    <AssemblyName>Assessment.Console</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,21 +43,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Address.cs" />
-    <Compile Include="Entities\Contact.cs" />
-    <Compile Include="Interfaces\IAddress.cs" />
-    <Compile Include="Interfaces\IAppDataContext.cs" />
-    <Compile Include="Interfaces\IContact.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dtos\" />
-    <Folder Include="Enums\" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Assessment.Common\Assessment.Common.csproj">
       <Project>{d7b5e3ab-35f1-452e-a229-976a303940f2}</Project>
       <Name>Assessment.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Assessment.DataLayer\Assessment.DataLayer.csproj">
+      <Project>{2c4968ca-6e41-4d55-94bd-886684ffda35}</Project>
+      <Name>Assessment.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Assessment.Domain\Assessment.Domain.csproj">
+      <Project>{dc8cf5fd-0cca-433a-af1e-fd5524e2f8b7}</Project>
+      <Name>Assessment.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Assessment.Model\Assessment.Model.csproj">
+      <Project>{9bfc2d2d-a2a4-48c0-8319-c3bcf9929b27}</Project>
+      <Name>Assessment.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
